@@ -1,0 +1,86 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c4ca80cae9cc43fc46c0e67860469321e8d7df76027364a641331f39b0a15e2d
+
+name:           hal
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hal#readme>
+homepage:       https://github.com/githubuser/hal#readme
+bug-reports:    https://github.com/githubuser/hal/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hal
+
+library
+  exposed-modules:
+      Eval.Error
+      Eval.Scheme
+      Eval.Scheme.Procedures
+      Eval.Scheme.Utils
+      Eval.Scheme.Vars
+      Lib
+      Parser.Base
+      Parser.Error
+      Parser.Scheme
+      Parser.Scheme.Atoms
+      Parser.Scheme.Lists
+      Parser.Scheme.Procedures
+      Parser.Scheme.Statements
+      Parser.Scheme.Utils
+      Parser.Scheme.Vars
+      Tokens
+      Utils
+  other-modules:
+      Paths_hal
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , directory
+  default-language: Haskell2010
+
+executable hal-exe
+  main-is: Main.hs
+  other-modules:
+      Exec
+      Files
+      LibsLoader
+      REPL
+      Utils
+      Paths_hal
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , hal
+  default-language: Haskell2010
+
+test-suite hal-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hal
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , hal
+  default-language: Haskell2010
