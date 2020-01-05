@@ -5,6 +5,9 @@ Hal is a scheme interpreter
 
 
 # Building with make
+
+**The Makefile use stack. You should install it before building hal.**
+
 ```
 make
 ```
